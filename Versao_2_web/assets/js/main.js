@@ -104,31 +104,31 @@ const bancoDeEstudantes = [
     },
 ]
 
-const interface = {
+const sistemaEscolar = {
         encontrarAluno(nome) {
             return bancoDeEstudantes.find((estudante) => estudante['nome'].includes(nome));
         },
 
-        mostrarInformacoes(nome) {
+        informacoesAluno(nome) {
             const aluno = this.encontrarAluno(nome);
             if (!aluno) {
                 return `Aluno com o nome "${nome}" não encontrado.`;
             }
         
-            let detalhes = '';
+            let escrita = '';
             for (const [key, value] of Object.entries(aluno)) {
                 if (typeof value === 'object' && !Array.isArray(value)) {
-                    detalhes += `${key}:\n`;
+                    escrita += `${key}:\n`;
                     for (const [subKey, subValue] of Object.entries(value)) {
-                        detalhes += `  ${subKey}: ${subValue}\n`;
+                        escrita += `  ${subKey}: ${subValue}\n`;
                     }
                 } else if (Array.isArray(value)) {
-                    detalhes += `${key}: ${value.join(', ')}\n`;
+                    escrita += `${key}: ${value.join(', ')}\n`;
                 } else {
-                    detalhes += `${key}: ${value}\n`;
+                    escrita += `${key}: ${value}\n`;
                 }
             }
-            return detalhes;
+            return escrita;
         },
 
         adicionarAluno(nome, email, telefone, rua, num, cep, complemento) {
@@ -216,9 +216,9 @@ function criaSistema() {
                         this.indicarAluno('Por favor, insira o nome de um aluno.');
                     }
                     
-                    const aluno = interface.encontrarAluno(valor)
+                    const aluno = sistemaEscolar.encontrarAluno(valor)
                     if(aluno) {
-                        const informacoes = interface.mostrarInformacoes(valor);
+                        const informacoes = sistemaEscolar.informacoesAluno(valor);
                         this.indicarAluno(informacoes);
                     } else {
                         this.indicarAluno('Aluno não encontrado.');
@@ -230,5 +230,5 @@ function criaSistema() {
     };
 }
 
-const sistemaEscolar = criaSistema();
-sistemaEscolar.inicia();
+const escola = criaSistema();
+escola.inicia();
