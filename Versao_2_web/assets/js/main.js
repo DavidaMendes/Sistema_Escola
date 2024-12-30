@@ -110,25 +110,42 @@ const sistemaEscolar = {
         },
 
         informacoesAluno(nome) {
-            const aluno = this.encontrarAluno(nome);
-            if (!aluno) {
-                return `Aluno com o nome "${nome}" não encontrado.`;
-            }
-        
-            let escrita = '';
-            for (const [key, value] of Object.entries(aluno)) {
-                if (typeof value === 'object' && !Array.isArray(value)) {
-                    escrita += `${key}:\n`;
-                    for (const [subKey, subValue] of Object.entries(value)) {
-                        escrita += `  ${subKey}: ${subValue}\n`;
-                    }
-                } else if (Array.isArray(value)) {
-                    escrita += `${key}: ${value.join(', ')}\n`;
-                } else {
-                    escrita += `${key}: ${value}\n`;
-                }
-            }
-            return escrita;
+          const nomeAluno = document.querySelector('#nome-aluno');
+          const emailAluno = document.querySelector('#email-aluno');
+          const telefoneAluno = document.querySelector('#telefone-aluno');
+          const enderecoAluno = document.querySelector('#endereco-aluno');
+          const cepAluno = document.querySelector('#cep-aluno');
+          const complementoAluno = document.querySelector('#complemento-aluno');
+          const aluno = this.encontrarAluno(nome);
+          if (!aluno) {
+              return `Aluno com o nome "${nome}" não encontrado.`;
+          }
+  
+          const paragrafos = [
+              { value: nomeAluno, key: 'nome' },
+              { value: emailAluno, key: 'email' },
+              { value: telefoneAluno, key: 'telefone' },
+              { value: enderecoAluno, key: 'logradouro' },
+              { value: cepAluno, key: 'cep' },
+              { value: complementoAluno, key: 'complemento' }
+          ];
+  
+          paragrafos.forEach(({ value, key }) => {
+              if (value && aluno[key]) {
+                  if (Array.isArray(aluno[key])) {
+                      value.textContent = `${key}: ${aluno[key].join(', ')}`;
+                  } else if (typeof aluno[key] === 'object') {
+                      const enderecoCompleto = Object.entries(aluno[key])
+                          .map(([subKey, subValue]) => `${subKey}: ${subValue}`)
+                          .join(', ');
+                      value.textContent = `${key}: ${enderecoCompleto}`;
+                  } else {
+                      value.textContent = `${key}: ${aluno[key]}`;
+                  }
+              } else {
+                  value.textContent = `${key}: Não disponível.`;
+              }
+          });
         },
 
         adicionarAluno(nome, email, telefone, rua, num, cep, complemento) {
@@ -165,70 +182,64 @@ const sistemaEscolar = {
             console.log('Aluno removido com sucesso !')
         },
 
-        editarAluno(nome, chave, valor){
+        editarAluno(nome, key, valor){
             const aluno = this.encontrarAluno(nome);
             if (!aluno) {
                 console.log(`Aluno com o nome "${nome}" não encontrado.`);
                 return;
             }
-            if(chave in aluno){
-                aluno[chave] = valor;
-                console.log(`A chave "${chave}" do aluno "${nome}" foi atualizada para: ${valor}`);
+            if(key in aluno){
+                aluno[key] = valor;
+                console.log(`A key "${key}" do aluno "${nome}" foi atualizada para: ${valor}`);
             }
-            else if (typeof aluno.endereco === "object" && chave in aluno.endereco) {
-                aluno.endereco[chave] = valor;
-                console.log(`A chave "${chave}" no endereço do aluno "${nome}" foi atualizada para: ${valor}`);
+            else if (typeof aluno.endereco === "object" && key in aluno.endereco) {
+                aluno.endereco[key] = valor;
+                console.log(`A key "${key}" no endereço do aluno "${nome}" foi atualizada para: ${valor}`);
             } else {
-                console.log(`A chave "${chave}" não existe no registro do aluno "${nome}".`);
+                console.log(`A key "${key}" não existe no registro do aluno "${nome}".`);
             }
             
         },
     };
 
 
-function criaSistema() {
-    return {
-        display: document.querySelector('.display'),
-        btnSelect: document.querySelector('.btn-select'),
-        informacoesAluno: document.querySelector('.informacoes-aluno p'),
-
-        inicia() {
-            this.mostrarAluno(); 
-        },
-
-        limparDisplay() {
-            this.display.value = ''; 
-        },
-
-        indicarAluno(valor) {
-            this.informacoesAluno.textContent = valor; 
-        },
-
-        mostrarAluno() {
-            document.addEventListener('click', (e) => {
-                const el = e.target;
-
-                if (el.classList.contains('btn-select')) {
-                    const valor = this.display.value.trim(); 
-                    this.limparDisplay();
-
-                    if(!valor){
-                        this.indicarAluno('Por favor, insira o nome de um aluno.');
-                    }
-                    
-                    const aluno = sistemaEscolar.encontrarAluno(valor)
-                    if(aluno) {
-                        const informacoes = sistemaEscolar.informacoesAluno(valor);
-                        this.indicarAluno(informacoes);
-                    } else {
-                        this.indicarAluno('Aluno não encontrado.');
-                    }
-                    
-                }
-            });
-        },
-    };
-}
-
-const escola = criaSistema();
-escola.inicia();
+    function criaSistema() {
+      return {
+          display: document.querySelector('.display'),
+          btnSelect: document.querySelector('.btn-select'),
+  
+          inicia() {
+              this.mostrarAluno();
+          },
+  
+          limparDisplay() {
+              this.display.value = '';
+          },
+  
+          mostrarAluno() {
+              document.addEventListener('click', (e) => {
+                  const el = e.target;
+  
+                  if (el.classList.contains('btn-select')) {
+                      const valor = this.display.value.trim();
+                      this.limparDisplay();
+  
+                      if (!valor) {
+                          alert('Por favor, insira o nome de um aluno.');
+                          return;
+                      }
+  
+                      const aluno = sistemaEscolar.encontrarAluno(valor);
+                      if (aluno) {
+                          sistemaEscolar.informacoesAluno(valor);
+                      } else {
+                          alert('Aluno não encontrado.');
+                      }
+                  }
+              });
+          },
+      };
+  }
+  
+  const escola = criaSistema();
+  escola.inicia();
