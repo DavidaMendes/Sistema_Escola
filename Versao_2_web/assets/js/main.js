@@ -108,26 +108,27 @@ const sistemaEscolar = {
         encontrarAluno(nome) {
             return bancoDeEstudantes.find((estudante) => estudante['nome'].includes(nome));
         },
+        
+        nomeAluno : document.querySelector('#nome-aluno'),
+        emailAluno : document.querySelector('#email-aluno'),
+        telefoneAluno : document.querySelector('#telefone-aluno'),
+        enderecoAluno : document.querySelector('#endereco-aluno'),
+        cepAluno : document.querySelector('#cep-aluno'),
+        complementoAluno : document.querySelector('#complemento-aluno'),
 
         informacoesAluno(nome) {
-          const nomeAluno = document.querySelector('#nome-aluno');
-          const emailAluno = document.querySelector('#email-aluno');
-          const telefoneAluno = document.querySelector('#telefone-aluno');
-          const enderecoAluno = document.querySelector('#endereco-aluno');
-          const cepAluno = document.querySelector('#cep-aluno');
-          const complementoAluno = document.querySelector('#complemento-aluno');
           const aluno = this.encontrarAluno(nome);
           if (!aluno) {
               return `Aluno com o nome "${nome}" não encontrado.`;
           }
   
           const paragrafos = [
-              { value: nomeAluno, key: 'nome' },
-              { value: emailAluno, key: 'email' },
-              { value: telefoneAluno, key: 'telefone' },
-              { value: enderecoAluno, key: 'logradouro' },
-              { value: cepAluno, key: 'cep' },
-              { value: complementoAluno, key: 'complemento' }
+              { value: this.nomeAluno, key: 'nome' },
+              { value: this.emailAluno, key: 'email' },
+              { value: this.telefoneAluno, key: 'telefone' },
+              { value: this.enderecoAluno, key: 'logradouro' },
+              { value: this.cepAluno, key: 'cep' },
+              { value: this.complementoAluno, key: 'complemento' }
           ];
   
           paragrafos.forEach(({ value, key }) => {
@@ -223,17 +224,18 @@ const sistemaEscolar = {
                   if (el.classList.contains('btn-select')) {
                       const valor = this.display.value.trim();
                       this.limparDisplay();
-  
+                    
                       if (!valor) {
-                          alert('Por favor, insira o nome de um aluno.');
-                          return;
+                        sistemaEscolar.nomeAluno.textContent = 'Por favor, insira o nome de um aluno.';
+                        return;
                       }
   
                       const aluno = sistemaEscolar.encontrarAluno(valor);
                       if (aluno) {
                           sistemaEscolar.informacoesAluno(valor);
                       } else {
-                          alert('Aluno não encontrado.');
+                        sistemaEscolar.nomeAluno.textContent = 'Aluno não encontrado.';
+                        return;
                       }
                   }
               });
@@ -243,3 +245,5 @@ const sistemaEscolar = {
   
   const escola = criaSistema();
   escola.inicia();
+
+  // Erros:endereco não aprece
