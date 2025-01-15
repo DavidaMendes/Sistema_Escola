@@ -104,7 +104,7 @@ const bancoDeEstudantes = [
     },
 ]
 
-const sistemaEscolar = {
+    const sistemaEscolar = {
         encontrarAluno(nome) {
             return bancoDeEstudantes.find((estudante) => estudante['nome'].includes(nome));
         },
@@ -245,5 +245,6 @@ const sistemaEscolar = {
   
   const escola = criaSistema();
   escola.inicia();
-
+  
+  // Teoricamente o conceito de função fabrica está sendo usada errada aqui, pois estou executando o sistema e não gerando um objeto novo a partir dele
   // Erros:endereco não aprece
