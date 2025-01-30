@@ -1,14 +1,51 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
 :root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
+  --primary-color: #E3DDF4;
+  --primary-color-purpledark: #250D49;
 }
 
 * {
   box-sizing: border-box;
   outline: 0;
+  margin: 0;
+  padding: 0;
 }
 
+/*Header*/
+
+.cabecalho {
+  background-color: var(--primary-color-purpledark);
+  padding: 2px 30px;
+  top: 0;
+  position: sticky;
+}
+.cabecalho-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cabecalho-nav-imgLogo{
+  display: flex;
+  width: 80px;
+  height:80px;
+}
+.cabecalho-nav-container{
+  display: flex;
+  gap: 88px;
+  padding: 0 50px;
+}
+.cabecalho-nav-container-links {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
+  
+}
+.cabecalho-nav-container-links:hover {
+  color: #cdbff4;
+}
+
+/*Body*/
 body {
   margin: 0;
   padding: 0;
@@ -18,13 +55,18 @@ body {
   line-height: 1.5em;
 }
 
+
 .container {
   max-width: 640px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+
+
 form input,
 form label,
 form button {
@@ -55,7 +97,7 @@ form button {
 }
 
 form button:hover {
-  background: var(--primary-color-darker);
+  background: var(--primary-color-purpledark);
 }
 
 .sistema {
@@ -66,6 +108,7 @@ form button:hover {
   font-size: 2em;
   width: 100%;
   text-align: left;
+  border-radius: 10px;
 }
 
 .btn {
