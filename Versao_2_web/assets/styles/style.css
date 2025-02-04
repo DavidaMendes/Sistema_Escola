@@ -196,3 +196,33 @@ p{
   color: var(--primary-color-purpledark);
 }
 
+/*Página Remover*/
+#name-remover{
+  color: red;
+}
+
+.verificador-remover{
+  display: flex;
+  justify-content: space-between;
+}
+
+.verificador-remover-texto{
+  background-color: var(--primary-color-purpledark);
+  color: var(--primary-color);
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.button-verificacao{
+  border: none;
+  background-color: var(--primary-color-purpledark);
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 14px;
+}
+.button-verificacao:hover{
+  color: #ae8ae4;
+}
