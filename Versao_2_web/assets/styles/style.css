@@ -60,7 +60,8 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #d0cfcf
+  background-color: var(--primary-color-purpledark);
+  color:#b6abd4;
 }
 
 .dropdown:hover .dropdown-content {
@@ -114,7 +115,6 @@ body {
   line-height: 1.5em;
 }
 
-
 .container {
   max-width: 640px;
   padding: 50px;
@@ -123,8 +123,6 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-
-
 
 form input,
 form label,
