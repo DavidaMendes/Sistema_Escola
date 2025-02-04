@@ -164,10 +164,12 @@ form button:hover {
 }
 
 .display {
-  font-size: 2em;
+  height: 50px;
+  font-size: 1.25em;
   width: 100%;
   text-align: left;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid black;
 }
 
 .btn {
@@ -175,13 +177,17 @@ form button:hover {
   height: 50px;
   font-size: 1em;
   border: none;
-  background: #dfdfdf;
+  background: var(--primary-color-purpledark);
+  color: #b6abd4;
   cursor: pointer;
   width: 50px;
+  border-radius: 0 10px 10px 0;
+
 }
 
 .btn:hover {
-  background: #9e9e9e;
+  background: var(--color-hover);
+  color: var(--primary-color-purpledark);
 }
 
 h1{
