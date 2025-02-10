@@ -4,6 +4,7 @@
   --primary-color: #E3DDF4;
   --primary-color-purpledark: #250D49;
   --color-hover: #cdbff4;
+  --color-purple-commun: #b6abd4;
 }
 
 * {
@@ -116,12 +117,18 @@ body {
 }
 
 .container {
-  max-width: 640px;
+  margin-top: 120px;
   padding: 50px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
+}
+
+.inside-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 form input,
@@ -162,18 +169,19 @@ form button:hover {
 }
 
 .display {
-  height: 50px;
-  font-size: 1.25em;
+  height: 40px;
+  font-size: 1em;
   width: 100%;
   text-align: left;
   border-radius: 10px 0 0 10px;
-  border: 1px solid black;
+  border: 1.6px solid black;
   color: #250D49;
+  background-color: #f1eff9;
 }
 
 .btn {
   width: 100%;
-  height: 50px;
+  height: 40px;
   font-size: 1em;
   border: none;
   background: var(--primary-color-purpledark);
@@ -181,7 +189,7 @@ form button:hover {
   cursor: pointer;
   width: 50px;
   border-radius: 0 10px 10px 0;
-
+  font-size: 16px;
 }
 
 .btn:hover {
@@ -191,6 +199,7 @@ form button:hover {
 
 h1{
   color: var(--primary-color-purpledark);
+  font-size: 30px;
 }
 p{
   color: var(--primary-color-purpledark);
@@ -226,3 +235,100 @@ p{
 .button-verificacao:hover{
   color: #ae8ae4;
 }
+
+/*Home Page*/
+#logo-home{
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/*Página Adicionar*/
+.informacoes-adic{
+  display: flex;
+}
+
+.right-informacoes-adic{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.left-informacoes-adic{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.traco-meio {
+  padding: 0 30px 0 30px;
+}
+.traco-meio p{
+  background-color: var(--primary-color-purpledark);
+  width: 3px;
+  height: 325px;
+}
+
+.display-adic{
+  height: 40px;
+  font-size: 1em;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  border: 1.6px solid black;
+  color: #250D49;
+  background-color: #f1eff9;
+} 
+
+#submit-button{
+  border: none;
+  background-color: var(--primary-color-purpledark);
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/*Página de edição*/
+#name-edit{
+  display: flex;
+  justify-content: center;
+}
+
+.container-edicao{
+  display: flex;
+}
+
+#editar-aluno{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1.6px solid black;
+  color: var(--primary-color-purpledark);
+  background-color: #ccc1ec;
+  font-weight: bold; 
+}
+
+option:hover{
+  color: var(--color-purple-commun);
+  background-color: var(--primary-color-purpledark);
+}
+
+.container-editar-aluno{
+  padding: 0 0 0 10px;
+}
+
+option {
+  font-weight: bold; 
+}
+
+.display-edit{
+  height: 40px;
+  font-size: 1em;
+  width: 175px;
+  text-align: left;
+  border-radius: 10px 0 0 10px;
+  border: 1.6px solid black;
+  color: #250D49;
+  background-color: #f1eff9;
+} 

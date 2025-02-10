@@ -1,31 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syschool</title>
-    <link rel="shortcut icon" href="assets/img/logo_syschool-icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo_syschool-icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
     <header class="cabecalho">
-        <nav class="cabecalho-nav">
-          <div class="cabecalho-nav-imgLogo">
-            <img src="assets/img/logo_syschool-removebg-preview.png" alt="logo site" />
+      <nav class="cabecalho-nav">
+        <div class="cabecalho-nav-imgLogo">
+          <img
+            src="assets/img/logo_syschool-removebg-preview.png"
+            alt="logo site"
+          />
+        </div>
+        <div class="cabecalho-nav-container">
+          <div class="dropdown">
+            <button class="dropbtn">
+              <b class="seta">▾</b><b>ADICIONAR</b>
+            </button>
+            <div class="dropdown-content">
+              <a href="inf.html"><b>INFORMAÇÕES</b></a>
+              <a href="remov.html"><b>REMOVER</b></a>
+              <a href="edit.html"><b>EDITAR</b></a>
+            </div>
           </div>
-          <div class="cabecalho-nav-container">
-              <div class="dropdown">
-                <button class="dropbtn"><b class="seta">▾</b><b>ADICIONAR</b></button>
-                <div class="dropdown-content">
-                    <a href="inf.html"><b>INFORMAÇÕES</b></a>
-                    <a href="remov.html"><b>REMOVER</b></a>
-                    <a href="edit.html"><b>EDITAR</b></a>
-                </div>
-              </div>
-              <a class="cabecalho-nav-container-links" href="inf.html"><b>ALUNOS</b></a>
-              <a class="cabecalho-nav-container-links" href="home.html"><b>HOME</b></a>
-          </div>
-        </nav>
-      </header>
-</body>
+          <a class="cabecalho-nav-container-links" href="inf.html"
+            ><b>ALUNOS</b></a
+          >
+          <a class="cabecalho-nav-container-links" href="home.html"
+            ><b>HOME</b></a
+          >
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+      <section class="inside-container">
+        <section class="informacoes-adic">
+          <section class="right-informacoes-adic">
+            <h1>ADICIONAR ALUNO:</h1>
+            <tr>
+              <p><b>NOME:</b></p>
+              <td colspan="4"><input type="text" class="display-adic" /></td>
+              <p><b>EMAIL:</b></p>
+              <td colspan="4"><input type="text" class="display-adic" /></td>
+              <p><b>CPF:</b></p>
+              <td colspan="4"><input type="text" class="display-adic" /></td>
+            </tr>
+            <button id="submit-button"><b>SUBMIT !</b></button>
+          </section>
+          <div class="traco-meio"><p></p></div>
+          <section class="left-informacoes-adic">
+            <p><b>RUA:</b></p>
+            <td colspan="4"><input type="text" class="display-adic" /></td>
+            <p><b>NÚMERO:</b></p>
+            <td colspan="4"><input type="text" class="display-adic" /></td>
+            <p><b>CEP:</b></p>
+            <td colspan="4"><input type="text" class="display-adic" /></td>
+            <p><b>COMPLEMENTO:</b></p>
+            <td colspan="4"><input type="text" class="display-adic" /></td>
+          </section>
+        </section>
+      </section>
+    </section>
+  </body>
 </html>

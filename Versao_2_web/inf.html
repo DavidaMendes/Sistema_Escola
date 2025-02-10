@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syschool</title>
-    <link rel="shortcut icon" href="assets/img/logo_syschool-icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo_syschool-icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
     <header class="cabecalho">
-        <nav class="cabecalho-nav">
-          <div class="cabecalho-nav-imgLogo">
-            <img src="assets/img/logo_syschool-removebg-preview.png" alt="logo site" />
+      <nav class="cabecalho-nav">
+        <div class="cabecalho-nav-imgLogo">
+          <img
+            src="assets/img/logo_syschool-removebg-preview.png"
+            alt="logo site"
+          />
+        </div>
+        <div class="cabecalho-nav-container">
+          <div class="dropdown">
+            <button class="dropbtn">
+              <b class="seta">▾</b><b>INFORMAÇÕES</b>
+            </button>
+            <div class="dropdown-content">
+              <a href="adic.html"><b>ADICIONAR</b></a>
+              <a href="remov.html"><b>REMOVER</b></a>
+              <a href="edit.html"><b>EDITAR</b></a>
+            </div>
           </div>
-          <div class="cabecalho-nav-container">
-              <div class="dropdown">
-                <button class="dropbtn"><b class="seta">▾</b><b>INFORMAÇÕES</b></button>
-                <div class="dropdown-content">
-                    <a href="adic.html"><b>ADICIONAR</b></a>
-                    <a href="remov.html"><b>REMOVER</b></a>
-                    <a href="edit.html"><b>EDITAR</b></a>
-                </div>
-              </div>
-              <a class="cabecalho-nav-container-links" href="inf.html"><b>ALUNOS</b></a>
-              <a class="cabecalho-nav-container-links" href="home.html"><b>HOME</b></a>
-          </div>
-        </nav>
-      </header>
+          <a class="cabecalho-nav-container-links" href="inf.html"
+            ><b>ALUNOS</b></a
+          >
+          <a class="cabecalho-nav-container-links" href="home.html"
+            ><b>HOME</b></a
+          >
+        </div>
+      </nav>
+    </header>
     <section class="container">
+      <section class="inside-container">
         <h1>NOME DO ALUNO:</h1>
         <table class="sistema">
-            <tr>
-                <td colspan="4"><input type="text" class="display"></td>
-                <td><button class="btn btn-select">▶</button></td>
-            </tr>
+          <tr>
+            <td colspan="4"><input type="text" class="display" /></td>
+            <td><button class="btn btn-select">▶</button></td>
+          </tr>
         </table>
         <section class="informacoes-aluno">
-            <p id="nome-aluno"><b>ALUNO:</b></p>
-            <p id="email-aluno"><b>EMAIL</b></p>
-            <p id="telefone-aluno"><b>TELEFONE</b></p>
-            <p id="endereco-aluno"><b>RUA:</b></p>
-            <p id="cep-aluno"><b>CEP:</b></p>
-            <p id="complemento-aluno"><b>COMPLEMENTO:</b></p>
-        </section> 
+          <p id="nome-aluno"><b>ALUNO:</b></p>
+          <p id="email-aluno"><b>EMAIL</b></p>
+          <p id="telefone-aluno"><b>TELEFONE</b></p>
+          <p id="endereco-aluno"><b>RUA:</b></p>
+          <p id="cep-aluno"><b>CEP:</b></p>
+          <p id="complemento-aluno"><b>COMPLEMENTO:</b></p>
+        </section>
+      </section>
     </section>
     <script src="./assets/js/inf.js"></script>
-</body>
+  </body>
 </html>
