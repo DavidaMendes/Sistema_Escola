@@ -218,14 +218,6 @@ function criaSistema() {
       this.display.value = "";
     },
 
-    limparParagrafo() {
-      sistemaEscolar.paragrafos.forEach((paragrafo) => {
-        if (paragrafo) {
-          paragrafo.textContent = "";
-        }
-      });
-    },
-
     mostrarAluno() {
       document.addEventListener("click", (e) => {
         const el = e.target;
