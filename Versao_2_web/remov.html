@@ -46,14 +46,16 @@
           <td><button class="btn btn-select">▶</button></td>
         </tr>
       </table>
-      <section class="verificador-remover">
+      <section class="verificador-remover" style="display: none;">
         <p class="verificador-remover-texto">
           <b>CERTEZA QUE DESEJA FAZER ISSO ?</b>
-          <button class="button-verificacao"><b>SIM</b></button><b>|</b
-          ><button class="button-verificacao"><b>NÃO</b></button>
+          <button class="button-verificacao sim"><b>SIM</b></button>
+          <b>|</b>
+          <button class="button-verificacao nao"><b>NÃO</b></button>
         </p>
-      </section>
-      <p><b>ALUNO REMOVIDO !</b></p>
+      </section>      
+      <p><b id="paragrafo"></b></p>
     </section>
+    <script src="assets/js/remov.js"></script>
   </body>
 </html>
