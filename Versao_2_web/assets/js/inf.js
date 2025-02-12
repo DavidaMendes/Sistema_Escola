@@ -147,41 +147,6 @@ const sistemaEscolar = {
     });
   },
 
-  // adicionarAluno(nome, email, telefone, rua, num, cep, complemento) {
-  //   const novoAluno = {
-  //     nome: nome,
-  //     email: email,
-  //     telefone: telefone,
-  //     endereco: {
-  //       logradouro: rua,
-  //       numero: num,
-  //       cep: cep,
-  //       complemento: complemento,
-  //     },
-  //   };
-  //   bancoDeEstudantes.push(novoAluno);
-  //   console.log("Aluno adicionado com sucesso!");
-  // },
-
-  // encontrarIndiceAluno(nome) {
-  //   return bancoDeEstudantes.findIndex((estudante) =>
-  //     estudante["nome"].includes(nome)
-  //   );
-  // },
-
-  // removerAluno(nome) {
-  //   const alunoIndex = this.encontrarIndiceAluno(nome);
-  //   if (!aluno) {
-  //     console.log(`Aluno com o nome "${nome}" não encontrado.`);
-  //     return;
-  //   }
-  //   if (alunoIndex === -1) {
-  //     console.log(`Aluno com o nome "${nome}" não encontrado.`);
-  //     return;
-  //   }
-  //   bancoDeEstudantes.splice(alunoIndex, 1);
-  //   console.log("Aluno removido com sucesso !");
-  // },
 
   // editarAluno(nome, key, valor) {
   //   const aluno = this.encontrarAluno(nome);

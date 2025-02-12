@@ -290,6 +290,14 @@ p{
   padding: 10px;
   border-radius: 10px;
 }
+#submit-button:hover{
+  color: var(--primary-color-purpledark);
+  background-color: var(--color-hover);
+}
+#submit-button:active{
+  color: var(--color-hover);
+  background-color: var(--primary-color-purpledark);
+}
 
 /*Página de edição*/
 #name-edit{
