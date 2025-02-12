@@ -147,27 +147,6 @@ const sistemaEscolar = {
     });
   },
 
-
-  // editarAluno(nome, key, valor) {
-  //   const aluno = this.encontrarAluno(nome);
-  //   if (!aluno) {
-  //     console.log(`Aluno com o nome "${nome}" não encontrado.`);
-  //     return;
-  //   }
-  //   if (key in aluno) {
-  //     aluno[key] = valor;
-  //     console.log(
-  //       `A key "${key}" do aluno "${nome}" foi atualizada para: ${valor}`
-  //     );
-  //   } else if (typeof aluno.endereco === "object" && key in aluno.endereco) {
-  //     aluno.endereco[key] = valor;
-  //     console.log(
-  //       `A key "${key}" no endereço do aluno "${nome}" foi atualizada para: ${valor}`
-  //     );
-  //   } else {
-  //     console.log(`A key "${key}" não existe no registro do aluno "${nome}".`);
-  //   }
-  // },
 };
 
 function criaSistema() {

@@ -341,3 +341,8 @@ option {
   color: #250D49;
   background-color: #f1eff9;
 } 
+
+#primeira-sessao, #segunda-sessao{
+  display: none;
+}
+

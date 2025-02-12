@@ -38,31 +38,42 @@
         </div>
       </nav>
     </header>
-    <section class="container">
+    <section class="container" style="gap: 3px;">
       <h1>EDITAR INFORMAÇÃO<span id="name-edit"> DE UM ALUNO:</span></h1>
-      <section class="container-edicao">
-        <td colspan="4"><input type="text" class="display-edit" /></td>
-        <td><button class="btn btn-select">▶</button></td>
-        <div class="container-editar-aluno">
-          <select id="editar-aluno">
-            <option value="nome">Nome</option>
-            <option value="email">E-mail</option>
-            <option value="telefone">Telefone</option>
-            <option value="endereco">Rua</option>
-            <option value="endereco">Número</option>
-            <option value="endereco">CEP</option>
-            <option value="endereco">Complemento</option>
-          </select>
+      <div style="display: flex; flex-direction: column;" id="zero-sessao">
+        <p><span style="font-size: 16px;">Nome do Aluno:</span></p>
+        <div style="display: flex;">
+          <td colspan="4"><input type="text" class="display" /></td>
+          <td><button class="btn btn-select" id="btn-nome">▶</button></td>
         </div>
-      </section>
-      <section class="verificador-remover">
+      </div>
+      <div style="flex-direction: column;" id="primeira-sessao">
+        <p><span style="font-size: 16px;">Nova informação:</span></p>
+        <section class="container-edicao">
+          <td colspan="4"><input type="text" class="display-edit" /></td>
+          <td><button class="btn btn-select" id="btn-edit">▶</button></td>
+          <div class="container-editar-aluno">
+            <select id="editar-aluno">
+              <option value="nome">Nome</option>
+              <option value="email">E-mail</option>
+              <option value="telefone">Telefone</option>
+              <option value="endereco">Rua</option>
+              <option value="endereco">Número</option>
+              <option value="endereco">CEP</option>
+              <option value="endereco">Complemento</option>
+            </select>
+          </div>
+        </section>
+      </div>
+      <section class="verificador-editar" id="segunda-sessao">
         <p class="verificador-remover-texto">
           <b>CERTEZA QUE DESEJA FAZER ISSO ?</b>
-          <button class="button-verificacao"><b>SIM</b></button><b>|</b
-          ><button class="button-verificacao"><b>NÃO</b></button>
+          <button class="button-verificacao sim"><b>SIM</b></button><b>|</b
+          ><button class="button-verificacao nao"><b>NÃO</b></button>
         </p>
       </section>
-      <p><b>ALUNO REMOVIDO !</b></p>
+      <p id="paragrafo"><b></b></p>
     </section>
+    <script src="assets/js/edit.js"></script>
   </body>
 </html>
