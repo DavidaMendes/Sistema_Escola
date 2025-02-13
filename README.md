@@ -6,3 +6,5 @@
 <p>Neste programa contém um Array que funciona como um "banco de dados" com as informações dos alunos, a partir dai o usuário vai inserir no display da home page o nome do aluno que quer encontrar logo após ele ira receber tudo que ele precisa saber sobre o aluno.</p>
 <h2>Aprendizados</h2>
 <p>Com esse projeto tive a oportunidade de aprimorar meus conhecimentos de codução de pastas, entendimento de arquivos Json e como utiliza-los, melhorei minha lógica de programação em javascript e desenvolver em fullstack.</p>
+<h2>Kanban do projeto</h2>
+<p>Convido vocês a acessarem o backlog, planejamento e kanban do projeto :</p><a href="https://github.com/users/DavidaMendes/projects/1">Link do Kanban</a>
