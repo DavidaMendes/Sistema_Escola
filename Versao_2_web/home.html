@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Syschool</title>
-    <link
-      rel="shortcut icon"
-      href="assets/img/logo_syschool-icon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/styles/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syschool - Home</title>
+    <link rel="shortcut icon" href="assets/img/logo_syschool-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
     <header class="cabecalho">
-      <nav class="cabecalho-nav">
-        <div class="cabecalho-nav-imgLogo">
-          <img
-            src="assets/img/logo_syschool-removebg-preview.png"
-            alt="logo site"
-          />
-        </div>
-        <div class="cabecalho-nav-container">
-          <div class="dropdown">
-            <button class="dropbtn"><b class="seta">▾</b><b>HOME</b></button>
-            <div class="dropdown-content">
-              <a href="inf.html"><b>INFORMAÇÕES</b></a>
-              <a href="adic.html"><b>ADICIONAR</b></a>
-              <a href="remov.html"><b>REMOVER</b></a>
-              <a href="edit.html"><b>EDITAR</b></a>
+        <nav class="cabecalho-nav">
+            <div class="cabecalho-nav-imgLogo">
+                <img src="assets/img/logo_syschool-removebg-preview.png" alt="logo site">
             </div>
-          </div>
-          <a class="cabecalho-nav-container-links" href="inf.html"
-            ><b>ALUNOS</b></a
-          >
-          <a class="cabecalho-nav-container-links" href="home.html"
-            ><b>HOME</b></a
-          >
-        </div>
-      </nav>
+            <div class="cabecalho-nav-container">
+                <a class="cabecalho-nav-container-links" href="home.html"><b>HOME</b></a>
+                <a class="cabecalho-nav-container-links" href="inf.html"><b>ALUNOS</b></a>
+            </div>
+        </nav>
     </header>
-    <section class="container">
-      <img
-        src="assets/img/logo_syschool-removebg-preview.png"
-        alt="logo sistema"
-        id="logo-home"
-      />
-      <p class="verificador-remover-texto">
-        <b class="button-verificacao"
-          ><a href="inf.html" class="cabecalho-nav-container-links"
-            >ACESSAR SISTEMA</a
-          ></b
-        >
-      </p>
+
+    <section class="home-hero">
+        <h1>Transformando a Educação com Tecnologia!</h1>
+        <p>Gerencie alunos e informações de forma rápida e intuitiva.</p>
+        <a href="inf.html" class="btn-hero">Acessar Sistema</a>
     </section>
-  </body>
+
+    <section class="home-features">
+        <div class="feature-box">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Gestão de Alunos</h3>
+            <p>Gerencie os dados dos alunos de forma eficiente.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Professores</h3>
+            <p>Acompanhe os docentes e suas turmas.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Horários e Eventos</h3>
+            <p>Organize e visualize compromissos escolares.</p>
+        </div>
+    </section>
+</body>
 </html>
