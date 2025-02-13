@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
 :root {
-  --primary-color: #E3DDF4;
-  --primary-color-purpledark: #250D49;
-  --color-hover: #cdbff4;
-  --color-purple-commun: #b6abd4;
+  --primary-color: #FFFFFF;
+  --primary-color-purpledark: #030361;
+  --color-hover: #7979eb;
+  --color-commum-one: #b2b2fe;
+  --color-commum-two: #f1eff9;
+  --color-commum-three: #8d8ae4;
+  --color-commum-four: #ccc1ec;
 }
 
 * {
@@ -25,7 +28,7 @@
   border: none;
   cursor: pointer;
   background: none; 
-  background-color: #b6abd4;
+  background-color: var(--color-commum-one);
   width: 200px; 
   height: 35px;
   border-radius: 10px;
@@ -43,7 +46,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #b6abd4;
+  background-color: var(--color-commum-one);
   min-width: 200px;
   z-index: 1;
   border-radius: 0 0 10px 10px ;
@@ -62,7 +65,7 @@
 
 .dropdown-content a:hover {
   background-color: var(--primary-color-purpledark);
-  color:#b6abd4;
+  color:var(--color-commum-one);
 }
 
 .dropdown:hover .dropdown-content {
@@ -175,9 +178,10 @@ form button:hover {
   text-align: left;
   border-radius: 10px 0 0 10px;
   border: 1.6px solid black;
-  color: #250D49;
-  background-color: #f1eff9;
+  color: var(--primary-color-purpledark);
+  background-color: var(--color-commum-two);
   font-weight: bold; 
+  text-indent: 10px;
 }
 
 .btn {
@@ -186,7 +190,7 @@ form button:hover {
   font-size: 1em;
   border: none;
   background: var(--primary-color-purpledark);
-  color: #b6abd4;
+  color: var(--color-commum-one);
   cursor: pointer;
   width: 50px;
   border-radius: 0 10px 10px 0;
@@ -196,6 +200,11 @@ form button:hover {
 .btn:hover {
   background: var(--color-hover);
   color: var(--primary-color-purpledark);
+}
+
+.btn:active {
+  background-color: var(--primary-color-purpledark);
+  color: var(--color-commum-one);
 }
 
 h1{
@@ -208,7 +217,7 @@ p{
 
 /*Página Remover*/
 #name-remover{
-  color: red;
+  color: blue;
 }
 
 .verificador-remover{
@@ -234,15 +243,14 @@ p{
   font-size: 14px;
 }
 .button-verificacao:hover{
-  color: #ae8ae4;
+  color: var(--color-commum-three);
 }
 
-/*Home Page*/
 /* Home Page */
 .home-hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg, rgba(37, 13, 73, 0.9), rgba(182, 171, 212, 0.8)), url("../img/bg-school.jpg");
+  background: linear-gradient(135deg, rgba(3, 3, 97, 0.9), rgba(178, 178, 254, 0.8)), url("../img/logo_syschool-removebg-preview.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -349,8 +357,10 @@ p{
   text-align: left;
   border-radius: 10px;
   border: 1.6px solid black;
-  color: #250D49;
-  background-color: #f1eff9;
+  color: var(--primary-color-purpledark);
+  background-color: var(--color-commum-two);
+  font-weight: Bold;
+  text-indent: 10px;
 } 
 
 #submit-button{
@@ -371,7 +381,7 @@ p{
   background-color: var(--primary-color-purpledark);
 }
 
-/*Página de edição*/
+/*Página de Editar*/
 #name-edit{
   display: flex;
   justify-content: center;
@@ -386,12 +396,12 @@ p{
   border-radius: 10px;
   border: 1.6px solid black;
   color: var(--primary-color-purpledark);
-  background-color: #ccc1ec;
+  background-color: var(--color-commum-four);
   font-weight: bold; 
 }
 
 option:hover{
-  color: var(--color-purple-commun);
+  color: var(--color-commum-one);
   background-color: var(--primary-color-purpledark);
 }
 
@@ -410,8 +420,11 @@ option {
   text-align: left;
   border-radius: 10px 0 0 10px;
   border: 1.6px solid black;
-  color: #250D49; 
-  background-color: #f1eff9;
+  color: var(--primary-color-purpledark); 
+  background-color: var(--color-commum-two);
+  font-weight: bold;
+  text-indent: 10px;
+  
 } 
 
 #primeira-sessao, #segunda-sessao{
