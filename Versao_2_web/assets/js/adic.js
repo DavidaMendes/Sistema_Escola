@@ -106,6 +106,25 @@ function criaSistema() {
 
     inicia() {
       this.mostrarAluno();
+      this.habilitarNavegacaoPorEnter();
+      this.displays[0].focus();
+    },
+
+    habilitarNavegacaoPorEnter() {
+      this.displays.forEach((display, index) => {
+        display.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+
+            if (index < this.displays.length - 1) {
+              this.displays[index + 1].focus();
+            } else {
+              this.btnSelect.click();
+              this.displays[0].focus();
+            }
+          }
+        });
+      });
     },
 
     escreverParagrafo(valor) {
@@ -114,6 +133,7 @@ function criaSistema() {
 
     limparParagrafo() {
       this.paragrafo.textContent = "";
+      this.displays[0].focus();
     },
 
     limparDisplays() {
@@ -131,38 +151,45 @@ function criaSistema() {
     },
 
     mostrarAluno() {
-        document.addEventListener("click", (e) => {
-            const el = e.target;
-    
-            if (el.id === "submit-button") { 
-                const valor = this.valoresDisplays();
-                let camposVazios = false;
-    
-                this.displays.forEach((display, index) => {
-                    if (valor[index].trim() === "") {
-                        display.style.border = "2px solid red";
-                        camposVazios = true;
-                    } else {
-                        display.style.border = ""; 
-                    }
-                });
-    
-                if (camposVazios) {
-                    this.escreverParagrafo("Todos os campos devem ser preenchidos!");
-                    return;
-                }
-    
-                const [nome, email, telefone, rua, num, cep, complemento] = valor;
-    
-                sistemaEscolar.adicionarAluno(nome, email, telefone, rua, num, cep, complemento);
-    
-                this.escreverParagrafo(`Aluno "${nome}" adicionado com sucesso!`);
-    
-                this.limparDisplays();
+      document.addEventListener("click", (e) => {
+        const el = e.target;
+
+        if (el.id === "submit-button") {
+          const valor = this.valoresDisplays();
+          let camposVazios = false;
+
+          this.displays.forEach((display, index) => {
+            if (valor[index].trim() === "") {
+              display.style.border = "2px solid red";
+              camposVazios = true;
+            } else {
+              display.style.border = "";
             }
-        });
-    }
-    ,
+          });
+
+          if (camposVazios) {
+            this.escreverParagrafo("Todos os campos devem ser preenchidos!");
+            return;
+          }
+
+          const [nome, email, telefone, rua, num, cep, complemento] = valor;
+
+          sistemaEscolar.adicionarAluno(
+            nome,
+            email,
+            telefone,
+            rua,
+            num,
+            cep,
+            complemento
+          );
+
+          this.escreverParagrafo(`Aluno "${nome}" adicionado com sucesso!`);
+
+          this.limparDisplays();
+        }
+      });
+    },
   };
 }
 

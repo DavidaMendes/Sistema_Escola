@@ -146,7 +146,6 @@ const sistemaEscolar = {
       paragrafo.textContent = "";
     });
   },
-
 };
 
 function criaSistema() {
@@ -156,10 +155,12 @@ function criaSistema() {
 
     inicia() {
       this.mostrarAluno();
+      this.display.focus();
     },
 
     limparDisplay() {
       this.display.value = "";
+      this.display.focus();
     },
 
     mostrarAluno() {
@@ -167,35 +168,44 @@ function criaSistema() {
         const el = e.target;
 
         if (el.classList.contains("btn-select")) {
-          const valor = this.display.value.trim();
-          this.limparDisplay();
-
-          if (!valor) {
-            sistemaEscolar.nomeAluno.textContent =
-              "Por favor, insira o nome de um aluno.";
-            sistemaEscolar.limparParagrafo();
-            return;
-          }
-
-          const aluno = sistemaEscolar.encontrarAluno(valor);
-          sistemaEscolar.limparParagrafo();
-          if (aluno) {
-            sistemaEscolar.informacoesAluno(valor);
-          } else {
-            sistemaEscolar.nomeAluno.textContent = "Aluno não encontrado.";
-            limparParagrafo();
-            return;
-          }
+          this.processarEntrada();
         }
       });
+
+      this.display.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          this.processarEntrada();
+        }
+      });
+    },
+
+    processarEntrada() {
+      const valor = this.display.value.trim();
+      this.limparDisplay();
+
+      if (!valor) {
+        sistemaEscolar.limparParagrafo();
+        sistemaEscolar.nomeAluno.textContent =
+          "Por favor, inserir nome do Aluno!";
+        return;
+      }
+
+      const aluno = sistemaEscolar.encontrarAluno(valor);
+      sistemaEscolar.limparParagrafo();
+
+      if (aluno) {
+        sistemaEscolar.informacoesAluno(valor);
+      } else {
+        sistemaEscolar.limparParagrafo();
+        sistemaEscolar.nomeAluno.textContent = "Aluno não encontrado.";
+        return;
+      }
     },
   };
 }
 
 const escola = criaSistema();
 escola.inicia();
-
-// Erro: Quando eu vou colocar um nome que não existe e eu tinha feito uma pesquisa anterior, ele não sobrepoe
 
 // Teoricamente o conceito de função fabrica está sendo usada errada aqui, pois estou executando o sistema e não gerando um objeto novo a partir dele
 //O forEach é um método de arrays em JavaScript que permite percorrer cada elemento do array e executar uma função para cada um deles. Ele é útil quando você deseja iterar sobre os itens de um array sem precisar usar um loop for tradicional.
