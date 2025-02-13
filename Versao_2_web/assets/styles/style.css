@@ -238,11 +238,83 @@ p{
 }
 
 /*Home Page*/
-#logo-home{
-  background-color: black;
-  padding: 10px;
+/* Home Page */
+.home-hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, rgba(37, 13, 73, 0.9), rgba(182, 171, 212, 0.8)), url("../img/bg-school.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
   border-radius: 10px;
+  margin: 30px;
 }
+
+.home-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-hero {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--primary-color-purpledark);
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-hero:hover {
+  background-color: var(--color-hover);
+  color: var(--primary-color-purpledark);
+}
+
+/* Painel de funcionalidades */
+.home-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 20px;
+}
+
+.feature-box {
+  background: var(--primary-color-purpledark);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.feature-box i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.feature-box h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.feature-box p {
+  font-size: 14px;
+}
+
+.feature-box:hover {
+  background: var(--color-hover);
+  color: var(--primary-color-purpledark);
+  transform: scale(1.05);
+}
+
 
 /*Página Adicionar*/
 .informacoes-adic{
@@ -338,7 +410,7 @@ option {
   text-align: left;
   border-radius: 10px 0 0 10px;
   border: 1.6px solid black;
-  color: #250D49;
+  color: #250D49; 
   background-color: #f1eff9;
 } 
 
